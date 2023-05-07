@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+
+{% block body %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'home/home.css' %}">
+
+
+<style>
+
+
+
+  
+</style>
+
+<h1 class="text_r slide-in-top">hello</h1>
+
+
+<div id="controls-carousel" class=" h-[770px] z-10" data-carousel="slide">
+  <!-- Carousel wrapper -->
+  <div class="relative h-[770px] overflow-hidden rounded-lg ">
+    <!-- Item 1 -->
+    <div class="duration-700 ease-in-out" data-carousel-item="active">
+      <img src="{% static '/images/slide/cons1.jpg' %}" class="h-[770px] absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 filter brightness-50 hover:bg-opacity-50" style="background-blend-mode: darken;" alt="...">
+      <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+        <section class="xl:mr-[750px] xl:mb-[280px] lg:mr-[750px] lg:mb-[280px] md:mr-[490px] md:mb-[280px] sm:mr-[440px] sm:mb-[280px]">
+          <p class=" t slide-in-top text-2xl  text-red-400 xl:ml-5 lg:ml-5 md:ml-3 sm:ml-3 ml-[100px]" style="word-wrap: break-word;">Choose Your Best Service</p>
+            <br>
+          <h1 class=" t slide-in-top text-white text-4xl font-bold xl:ml-5 lg:ml-5 md:ml-3 sm:ml-3 ml-[100px]" style="word-wrap: break-word;">Choose Your Best Service</h1><br>
+          <p class=" t slide-in-top text-white  font-bold xl:ml-5 lg:ml-5 md:ml-3 sm:ml-3 ml-[100px]" style="word-wrap: break-word;">Convallis pulvinar condimentum sem lorem purus maecenas.sodaledlor
+            Lectus suspendisse cursus justo suspendisse done</p><br>
+
+            <button class=" xl:ml-5 lg:ml-5 md:ml-3 sm:ml-3 ml-[100px] bg-red-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+              Get Services
+             </button>
+             <button class=" xl:ml-5 lg:ml-5 md:ml-3 sm:ml-3 ml-[100px] bg-green-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+              Contact Us
+             </button>
+           
+        </section>
+        
+      </div>
+     
+    </div>
+<!-- 
+    home carousel part start -->
+    <!-- Item 2 -->
+    <div class="duration-700 ease-in-out" data-carousel-item="active">
+      <img src="{% static '/images/slide/cons3.jpg' %}" class="h-[770px] absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 filter brightness-50 hover:bg-opacity-50" style="background-blend-mode: darken;" alt="...">
+      <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+        <section class="xl:mr-[750px] xl:mb-[280px] lg:mr-[750px] lg:mb-[280px] md:mr-[490px] md:mb-[280px] sm:mr-[440px] sm:mb-[280px]">
+        <p class=" t slide-in-top text-2xl  text-red-400 xl:ml-5 lg:ml-5 md:ml-3 sm:ml-3 ml-[100px]" style="word-wrap: break-word;">Choose Your Best Service</p>
+          <br>
+        <h1 class=" t slide-in-top text-white text-4xl font-bold xl:ml-5 lg:ml-5 md:ml-3 sm:ml-3 ml-[100px]" style="word-wrap: break-word;">Choose Your Best Service</h1><br>
+        <p class=" t slide-in-top text-white  font-bold xl:ml-5 lg:ml-5 md:ml-3 sm:ml-3 ml-[100px]" style="word-wrap: break-word;">Convallis pulvinar condimentum sem lorem purus maecenas.sodaledlor
+          Lectus suspendisse cursus justo suspendisse done</p><br>
+
+          <button class=" xl:ml-5 lg:ml-5 md:ml-3 sm:ml-3 ml-[100px] bg-red-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+           Get Services
+          </button>
+          <button class=" xl:ml-5 lg:ml-5 md:ml-3 sm:ml-3 ml-[100px] bg-green-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+           Contact Us
+          </button>
+      </section>
+      </div>
+    </div>
+    <!-- Item 3 -->
+  </div>
+</div>
+  <br>
+<!-- home carousel part end -->
+
+<!-- about part start -->
+<div class="">
+
+  <section>
+    <h1 class="text-black text-3xl flex justify-center " style="word-wrap: break-word;">We’re here to help you when you need   <br> your Consultaion support</h1><br>
+  </section> <br>
+
+  <section>
+    <button id="about-button" class="xl:ml-5 lg:ml-5 md:ml-3 sm:ml-3 ml-[100px] bg-transparent hover:bg-red-500 text-black dark:text-white font-sm hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded">
+      About Us
+    </button>
+     <button id="mission-button"  class="xl:ml-5 lg:ml-5 md:ml-3 sm:ml-3 ml-[100px] bg-transparent hover:bg-red-500 text-black dark:text-white font-sm hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded">
+      Our Mission 
+    </button>
+     <button id="skills-button"  class="xl:ml-5 lg:ml-5 md:ml-3 sm:ml-3 ml-[100px] bg-transparent hover:bg-red-500 text-black dark:text-white font-sm hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded">
+      Work Skill 
+    </button>
+       
+  
+  </section> <br>
+
+  <section>
+    <div id="about-section">
+      <p>This is the about section.</p>
+    </div>
+    <div id="mission-section">
+      <p>This is the mission section.</p>
+    </div>
+    <div id="skills-section">
+      <p>This is the skills section.</p>
+    </div>
+
+  </section> 
+  <br>
+</div>
+
+
+<!-- about part end -->
+
+
+<script >
+ // get references to the buttons and sections
+  const aboutBtn = document.getElementById('about-button');
+  const missionBtn = document.getElementById('mission-button');
+  const skillsBtn = document.getElementById('skills-button');
+  const aboutSection = document.getElementById('about-section');
+  const missionSection = document.getElementById('mission-section');
+  const skillsSection = document.getElementById('skills-section');
+
+  // add click event listeners to the buttons
+  aboutBtn.addEventListener('click', () => {
+    aboutSection.style.display = 'block';
+    missionSection.style.display = 'none';
+    skillsSection.style.display = 'none';
+  });
+
+  missionBtn.addEventListener('click', () => {
+    aboutSection.style.display = 'none';
+    missionSection.style.display = 'block';
+    skillsSection.style.display = 'none';
+  });
+
+  skillsBtn.addEventListener('click', () => {
+    aboutSection.style.display = 'none';
+    missionSection.style.display = 'none';
+    skillsSection.style.display = 'block';
+  });
+
+  // hide the mission and skills sections initially
+  missionSection.style.display = 'none';
+  skillsSection.style.display = 'none';
+
+
+</script>
+
+<script src= "{% static 'home/home.js' %}" ></script>
+{% endblock body %}
