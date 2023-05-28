@@ -1,0 +1,78 @@
+
+
+
+.headingstyle{
+    background-color: purple;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    }
+    
+    
+    .card{
+        background-color: rgb(237, 237, 217);
+        box-shadow: 2px 4px 4px rgb(179, 177, 177);
+        border-radius: 4px;
+        margin: 80px;
+
+        padding: 10px;
+        width: 650px;
+      
+        display: inline-block;
+    }
+    .cardTitle{
+        text-align: center;
+        margin-bottom: 7px;
+        font-size: 25px;
+        font-weight: bold;
+    }
+    .cardDesc{
+        text-align: justify;
+    }
+    .cardfooter{
+        text-align: center;
+        font-weight: bold;
+    }
+    .inline-block-element {
+        display: inline-block;
+        width: 200px;
+        height: 100px;
+        margin: 10px;
+        padding: 5px;
+        border: 1px solid black;
+      }
+
+
+
+
+
+
+
+
+      @media (max-width: 480px) {
+        /* Your CSS rules for mobile devices */
+  }
+      
+      /* Styles for devices with a width between 481px and 767px (typically tablets) */
+      @media (min-width: 481px) and (max-width: 767px) {
+        /* Your CSS rules for tablets */
+        .card{
+
+            background-color: rgb(237, 237, 217);
+            box-shadow: 2px 4px 4px rgb(179, 177, 177);
+            border-radius: 4px;
+            margin: 80px;
+            margin-left: 5px;
+            padding: 10px;
+            width: 598px;
+          
+            display: inline-block;
+         
+          }
+      }
+      
+      /* Styles for devices with a width greater than 767px (typically desktops) */
+      @media (min-width: 768px) {
+        /* Your CSS rules for desktop devices */
+        
+      }

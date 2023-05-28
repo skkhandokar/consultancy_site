@@ -9,10 +9,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
 <link rel="stylesheet" type="text/css" href="{% static 'home/home.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'home/service.css' %}">
 
 <link rel="stylesheet" type="text/css" href="{% static 'home/contact.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'home/packages.css' %}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
 <style>
     button.clicked {
         background-color: rgb(239, 71, 71);
@@ -50,6 +52,8 @@ to {
 background-position: 200% center;
 }
 }
+
+
 </style>
 
 
@@ -60,8 +64,9 @@ background-position: 200% center;
   <!-- Carousel wrapper -->
   <div class="relative h-[770px] overflow-hidden rounded-lg ">
     <!-- Item 1 -->
+    {% for slide in slides %}
     <div class="duration-700 ease-in-out" data-carousel-item="active">
-      <img src="{% static '/images/slide/cons1.jpg' %}" class="h-[770px] absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 filter brightness-50 hover:bg-opacity-50" style="background-blend-mode: darken;" alt="...">
+      <img src="{{ slide.image.url }}" class="h-[770px] absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 filter brightness-50 hover:bg-opacity-50" style="background-blend-mode: darken;" alt="...">
       <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center">
         <section class="xl:mr-[750px] xl:mb-[280px] lg:mr-[750px] lg:mb-[280px] md:mr-[490px] md:mb-[280px] sm:mr-[440px] sm:mb-[280px]">
           <p class=" t slide-in-top text-2xl  text-red-400 xl:ml-5 lg:ml-5 md:ml-3 sm:ml-3 ml-[100px]" style="word-wrap: break-word;">Choose Your Best Service</p>
@@ -82,28 +87,14 @@ background-position: 200% center;
       </div>
      
     </div>
+
+    {% endfor %}
 <!-- 
     home carousel part start -->
     <!-- Item 2 -->
-    <div class="duration-700 ease-in-out" data-carousel-item="active">
-      <img src="{% static '/images/slide/cons3.jpg' %}" class="h-[770px] absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 filter brightness-50 hover:bg-opacity-50" style="background-blend-mode: darken;" alt="...">
-      <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center">
-        <section class="xl:mr-[750px] xl:mb-[280px] lg:mr-[750px] lg:mb-[280px] md:mr-[490px] md:mb-[280px] sm:mr-[440px] sm:mb-[280px]">
-        <p class=" t slide-in-top text-2xl  text-red-400 xl:ml-5 lg:ml-5 md:ml-3 sm:ml-3 ml-[100px]" style="word-wrap: break-word;">Choose Your Best Service</p>
-          <br>
-        <h1 class=" t slide-in-top text-white text-4xl font-bold xl:ml-5 lg:ml-5 md:ml-3 sm:ml-3 ml-[100px]" style="word-wrap: break-word;">Choose Your Best Service</h1><br>
-        <p class=" t slide-in-top text-white  font-bold xl:ml-5 lg:ml-5 md:ml-3 sm:ml-3 ml-[100px]" style="word-wrap: break-word;">Convallis pulvinar condimentum sem lorem purus maecenas.sodaledlor
-          Lectus suspendisse cursus justo suspendisse done</p><br>
+    
+   
 
-          <button class=" xl:ml-5 lg:ml-5 md:ml-3 sm:ml-3 ml-[100px] bg-red-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
-           Get Services
-          </button>
-          <button  class=" xl:ml-5 lg:ml-5 md:ml-3 sm:ml-3 ml-[100px] bg-green-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
-           Contact Us
-          </button>
-      </section>
-      </div>
-    </div>
     <!-- Item 3 -->
   </div>
 </div>
@@ -116,37 +107,50 @@ background-position: 200% center;
 <div class="" id="ABOUT">
 
   <section>
-    <h1 class="text-black text-3xl flex justify-center " style="word-wrap: break-word;">We’re here to help you when you need   <br> your Consultaion support</h1><br>
+    <h1 class="text-black font-bold text-3xl flex justify-center " style="word-wrap: break-word;">We’re here to help you when you need   <br> your Consultaion support</h1><br>
   </section> <br>
 
   <section>
-
-    <button id="about-button" class="xl:ml-[100px] lg:ml-[100px] md:ml-[60px] sm:ml-3 ml-[100px] bg-transparent hover:bg-red-500 text-black dark:text-white font-sm hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded">
+    {% if about %}
+    <button id="about-button" class="  xl:ml-[100px] lg:ml-[100px] md:ml-[60px] sm:ml-3 ml-[100px] bg-transparent hover:bg-red-500 text-black dark:text-white font-sm hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded">
         About Us
       </button>
+      {% endif %}
+
+      {% if mission %}
        <button id="mission-button"  class="xl:ml-[100px] lg:ml-[100px] md:ml-3 sm:ml-3 ml-[100px] bg-transparent hover:bg-red-500 text-black dark:text-white font-sm hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded">
         Our Mission 
       </button>
+      {% endif %}
+
+      {% if workskill %}
        <button id="skills-button"  class=" mt-3 xl:ml-[100px] lg:ml-[100px] md:ml-3 sm:ml-3 ml-[100px] bg-transparent hover:bg-red-500 text-black dark:text-white font-sm hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded">
         Work Skill 
       </button>
+      {% endif %}
+
   </section> <br>
 
   <div class="xl:flex lg:flex md:flex xl:lg:md:sm:justify-center xl:ml-[100px] xl:mr-[100px] xl:gap-[120px] lg:ml-[100px] lg:mr-[70px] lg:gap-[120px] md:ml-[60px] md:mr-[60px] md:gap-[30px]  sm:ml-3  sm:mr-[25px] ">
   <section class=" w-[650px] ">
 
-     <div id="about-section">
-      <p id="about-section" style="word-wrap: break-word;" >Arham Multi Service loves to help individuals ,families with their immigration needs .I am  here to help. I will meet with you to understand your needs ,explain your options and let you know the whole process and the service charges before you start .You can pay upfront or overtime with personal checks, cash or major credits cards without any additional fees.</p>
+    {% for abt in about %}
+     <div id="about-section" >
+      <p id="about-section"  style="word-wrap: break-word;" >{{abt.description}}</p>
      </div>
+     {% endfor %}
 
+     {% for mis in mission %}
      <div id="mission-section">
-        <p id="mission-section">This is the mission section.</p>
+        <p id="mission-section">{{mis.description}}</p>
       </div>
+      {% endfor %}
 
+      {% for skill in workskill %}
       <div id="skills-section">
-        <p id="skills-section">This is the skills section.</p>                     
+        <p id="skills-section">{{skill.description}}</p>                     
       </div>
-
+      {% endfor %}
   </section> 
 
   <section class="xl:w-[850px] xl:h-[600px] md:w-[700px] md:h-[500px] mt-3">
@@ -160,9 +164,9 @@ background-position: 200% center;
 <!-- about part end -->
 
 <!-- service start part -->
-<div class="bg-red-500" id="SERVICE">
+<div class="" id="SERVICE">
   <br>
-<h1 class="flex justify-center text-white font-bold text-4xl">OUR <pre> </pre><span class="text-black font-bold text-4xl">SERVICE</span></h1>
+<h1 class="flex justify-center  font-bold text-4xl">OUR <pre> </pre><span class="text-red-500 font-bold text-4xl">SERVICE</span></h1>
 <br>
 <section class=" font-bold mr-[390px] ml-[390px]"><hr></section> <br>
 
@@ -170,15 +174,33 @@ background-position: 200% center;
 <h3 class=" font-bold text-black animate-charcter text-2xl " > Why Choose Arham Multi Service <br></h3></div><br>
 
 
-<p class="flex justify-center text-white font-md  ml-[150px] mr-[150px]"> 
+<p class="flex justify-center  font-md  ml-[150px] mr-[150px]"> 
   Your Service provider will be there on every step of the way until your case is complete.
   Know How much it costs .
   I will provide you with full details before we can proceed  .
   I will work with your case on timely fashion.</p>
-  <br>
-  <br>
 
-  <main class="flex justify-center">
+ 
+
+
+  {% for service in services %}
+
+    <div class="card ">
+      <h3 class="cardTitle"> {{service.title}}</h3>
+      <p class="cardDesc">{{service.description}}</p>
+     
+  </div>
+
+  {% endfor %}
+
+
+<br>
+
+
+</div>
+
+
+<!-- <main class="flex justify-center">
   <div class="container ">
     <input type="radio" name="dot" id="one">
     <input type="radio" name="dot" id="two">
@@ -301,21 +323,15 @@ background-position: 200% center;
       <label for="two" style="background-color: #ea5259;" class="two"></label>
     </div>
   </div>
-</main>
-<br>
-<br>
-<br>
-</div>
-
+</main> -->
 
 <!-- service part end -->
-<br>
-<br>
+
 
 
 <!-- packages start -->
 
-<div class=" flex justify-center "style="background-image: url({% static 'images/images/img7.png' %})" id="PACKAGES">
+<!-- <div class=" flex justify-center "style="background-image: url({% static 'images/images/img7.png' %})" id="PACKAGES">
 
   <div class="wrapper ">
   <h1 class="text-3xl font-semibold text-white" >BEST  PRICING PLAN </h1>
@@ -372,18 +388,29 @@ background-position: 200% center;
     </div>
     <button>Choose plan</button>
   </div>
-  </div>
+  </div> -->
 
-  <br>
-  <br>
+ 
   <br>
   <!-- packages end -->
+
+
 <!-- contact us start  -->
 <main class="flex justify-center" id="CONTACT">
 
  
 <div class="container">
+ 
   <img src="{% static '/images/images/contact-us.png' %}" alt="">
+  {% if messages %}
+  {% for msg in messages %}
+  <br>
+  <p class="flex justify-center text-green-500 font-bold ">{{msg}}</p>
+
+  <br>
+  {% endfor %}
+  
+  {% endif %}
   <div class="content">
     <div class="left-side">
       <div class="address details">
@@ -401,31 +428,33 @@ background-position: 200% center;
       <div class="email details">
         <i class="fas fa-envelope"></i>
         <div class="topic">Email</div>
-        <div class="text-one">arham@gmail.com</div>
-        <div class="text-two">arham@gmail.com</div>
+        <div class="text-one">arhammultiservice@gmail.com</div>
+        
       </div>
     </div>
     <div class="right-side">
       <div class="topic-text">Send us a message</div>
       <p>If you have any work from me or any types of quries related to my tutorial, you can send me message from here. It's my pleasure to help you.</p>
-    <form action="#">
+    <form method="POST" action="">{% csrf_token %}
       <div class="input-box">
-        <input type="text" placeholder="Enter your name" required>
+        <input type="text"name="name" placeholder="Enter your name" required>
       </div>
       <div class="input-box">
-        <input type="text" placeholder="Enter your Subject" required>
+        <input type="text" name="subject" placeholder="Enter your Subject" required>
       </div>
       <div class="input-box">
-        <input type="text" placeholder="Enter your email" required>
+        <input type="email" name="email" placeholder="Enter your email" required>
       </div>
       <div class="input-box message-box">
         
-        <input type="text" placeholder="Enter your message" required>
+        <input type="text" name="message" placeholder="Enter your message" required>
       </div>
-      <div class="button">
-        <input type="button" value="Send Now" >
+      <div class="button ">
+        <button
+        class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">SEND</button>
       </div>
     </form>
+    
   </div>
   </div>
 </div>
@@ -440,12 +469,13 @@ background-position: 200% center;
     const aboutBtn = document.getElementById('about-button');
     const missionBtn = document.getElementById('mission-button');
     const skillsBtn = document.getElementById('skills-button');
+
     const aboutSection = document.getElementById('about-section');
     const missionSection = document.getElementById('mission-section');
     const skillsSection = document.getElementById('skills-section');
-    
+
     // add click event listeners to the buttons
-    aboutBtn.addEventListener('click', () => {
+     aboutBtn.addEventListener('click', () => {
       aboutSection.style.display = 'block';
       missionSection.style.display = 'none';
       skillsSection.style.display = 'none';
@@ -476,6 +506,7 @@ background-position: 200% center;
     });
     
     // hide the mission and skills sections initially
+    aboutSection.style.display = 'block';
     missionSection.style.display = 'none';
     skillsSection.style.display = 'none';
     aboutBtn.classList.add('clicked');

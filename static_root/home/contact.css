@@ -95,7 +95,7 @@
     cursor: pointer;
     transition: all 0.3s ease;
   }
-  .button input[type="button"]:hover{
+  .submit input[type="submit"]:hover{
     background: #5029bc;
   }
   
